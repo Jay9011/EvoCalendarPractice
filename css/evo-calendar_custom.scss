@@ -1,0 +1,25 @@
+#evoCalendar {
+    tr.calendar-header {
+        >td:first-child.--weekend {
+            color: #ff7575;
+        }
+
+        >td:last-child.--weekend {
+            color: #3ca8ff;
+        }
+    }
+
+    tr.calendar-body {
+        >td:first-child.--weekend {
+            >.day {
+                color: #ff7575;
+            }
+        }
+
+        >td:last-child.--weekend {
+            >.day {
+                color: #3ca8ff;
+            }
+        }
+    }
+}

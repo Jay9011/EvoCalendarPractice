@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/evo-calendar.css">
+    <link rel="stylesheet" href="./css/evo-calendar_custom.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/evo-calendar.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            $('#evoCalendar').evoCalendar({
+                language: 'en',
+                todayHighlight: true,
+                sidebarToggler: true,
+                sidebarDisplayDefault: true,
+                eventListToggler: true,
+                eventDisplayDefault: true,
+                format: 'mm/dd/yyyy',
+                titleFormat: 'MM yyyy',
+                eventHeaderFormat: 'MM dd, yyyy',
+                calendarEvents: [{
+                        id: "required-id-1",
+                        name: "(09:00) 방1",
+                        date: "2021-04-21T09:00:00",
+                        type: "room1", // Type of event (event|holiday|birthday)
+                        description: 'Lorem ipsum dolor sit amet..', // Description of event (optional)
+                        badge: '1-day event', // Event badge (optional)
+                        color: '#63d867', // Event custom color (optional)
+                        everyYear: true, // Event is every year (optional)
+                    },
+                    {
+                        id: "required-id-2",
+                        name: "(09:30) 방1",
+                        date: "2021-04-21T09:30:00",
+                        type: "room1",
+                    },
+                    {
+                        id: "required-id-3",
+                        name: "(09:00) 방2",
+                        date: "2021-04-21T09:00:00",
+                        type: "room2",
+                    },
+                    {
+                        id: "required-id-4",
+                        name: "(09:00) 방3",
+                        date: "2021-04-21T10:30:00",
+                        type: "room3",
+                    },
+                ],
+            });
+
+            // calendar event 추가
+            $("#evoCalendar").evoCalendar('addCalendarEvent', [{
+                    id: "required-id-5",
+                    name: "NEW EVENT",
+                    date: "2021-04-13T11:00:00",
+                    type: "birthday",
+                    everyYear: true
+                },
+                {
+                    id: "required-id-6",
+                    name: "Holiday",
+                    date: "2021-04-17T11:00:00",
+                    type: "holiday",
+                    everyYear: false // default
+                },
+            ]);
+
+            // 해당 년도로 이동
+            // $("#evoCalendar").evoCalendar('selectYear', '2020');
+
+            // 해당 달로 이동
+            // $("#evoCalendar").evoCalendar('selectMonth', '11');
+
+            // 해당 날짜로 이동
+            // $("#evoCalendar").evoCalendar('selectDate', '2020-11-07');
+
+            // 슬라이드바 작동
+            // $("#evoCalendar").evoCalendar('toggleSidebar', true);
+
+            // 이벤트 리스트 작동
+            // $("#evoCalendar").evoCalendar('toggleEventList', true);
+
+            // 현재 선택된 Date 가져오기
+            // console.log($("#evoCalendar").evoCalendar('getActiveDate'));
+
+            // 현재 선택된 Date의 event들 가져오기
+            // console.log($("#evoCalendar").evoCalendar('getActiveEvents'));
+
+            // eventID로 해당 event 삭제
+            // $("#evoCalendar").evoCalendar('removeCalendarEvent', 'required-id-5');
+
+            // calendar 제거
+            // $("#evoCalendar").evoCalendar('destroy');
+
+            // selectDate
+            $('#evoCalendar').on('selectDate', function (event, newDate, oldDate) {
+                console.log('selectDate', event, newDate, oldDate);
+            });
+
+            // selectMonth
+            $('#evoCalendar').on('selectMonth', function (event, activeMonth, monthIndex) {
+                console.log('selectMonth', event, activeMonth, monthIndex);
+            });
+
+            // selectYear
+            $('#evoCalendar').on('selectYear', function (event, activeYear) {
+                console.log('selectYear', event, activeYear);
+            });
+
+            // selectEvent
+            $('#evoCalendar').on('selectEvent', function (event, activeEvent) {
+                console.log('selectEvent', event, activeEvent);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="evoCalendar"></div>
+</body>
+
+</html>
