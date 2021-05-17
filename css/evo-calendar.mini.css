@@ -1,0 +1,389 @@
+.evo-calendar {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+.calendar-sidebar {
+    width: 100%;
+}
+.sidebar-hide .calendar-sidebar {
+    height: 43px;
+}
+.sidebar-hide .calendar-sidebar {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.calendar-inner {
+    margin-left: 0;
+    padding: 53px 0 40px 0;
+    max-width: 100%;
+    float: unset;
+}
+tr.calendar-header .calendar-header-day {
+    padding: 0;
+    font-size: 16px;
+}
+tr.calendar-body .calendar-day {
+    padding: 8px 0;
+}
+tr.calendar-body .calendar-day .day {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+}
+.calendar-events {
+    position: relative;
+    padding: 20px 15px;
+    width: 100%;
+    height: 185px;
+    overflow-y: auto;
+    z-index: 0;
+}
+.sidebar-hide .calendar-inner,
+.event-hide .calendar-inner,
+.calendar-inner {
+    max-width: 100%;
+}
+.event-hide .calendar-events {
+    padding: 0 15px;
+    height: 0;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.calendar-inner::after {
+    content: none;
+    opacity: 0;
+}
+.sidebar-hide.event-hide .calendar-inner::after {
+    content: none;
+    opacity: 0;
+}
+.event-indicator {
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+}
+.event-indicator > .type-bullet {
+    padding: 1px;
+}
+.event-indicator > .type-bullet > div {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+tr.calendar-body .calendar-day .day.calendar-today .event-indicator,
+tr.calendar-body .calendar-day .day.calendar-active .event-indicator {
+    -webkit-transform: translate(-50%, 3px);
+        -ms-transform: translate(-50%, 3px);
+            transform: translate(-50%, 3px);
+}
+.calendar-sidebar > span#sidebarToggler,
+#eventListToggler {
+    width: 40px;
+    height: 40px;
+}
+.calendar-sidebar > span#sidebarToggler {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+    top: 0;
+    bottom: unset;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+th[colspan="7"]::after {
+    bottom: 0;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+#eventListToggler {
+    top:100%;
+    right: 0;
+    -webkit-transform: translate(0, -100%);
+        -ms-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+}
+.event-hide #eventListToggler {
+    top:100%;
+    right:0;
+    -webkit-transform: translate(0, -100%);
+        -ms-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+}
+#eventListToggler button.icon-button > span.chevron-arrow-right {
+    position: relative;
+    display: inline-block;
+    -webkit-transform: translate(0, 5px) rotate(225deg);
+        -ms-transform: translate(0, 5px) rotate(225deg);
+            transform: translate(0, 5px) rotate(225deg);
+    transition: transform 400ms ease;
+}
+.event-hide #eventListToggler button.icon-button > span.chevron-arrow-right {
+    position: relative;
+    display: inline-block;
+    -webkit-transform: translate(0, -3px) rotate(45deg);
+        -ms-transform: translate(0, -3px) rotate(45deg);
+            transform: translate(0, -3px) rotate(45deg);
+}
+.calendar-events > .event-list {
+    margin-top: 20px;
+}
+.event-list > .event-empty {
+    padding: 10px;
+}
+.calendar-sidebar > .calendar-year {
+    position: relative;
+    padding: 10px 20px;
+    text-align: center;
+}
+.calendar-sidebar > .calendar-year > button.icon-button {
+    width: 14px;
+    height: 14px;
+}
+.calendar-sidebar > .calendar-year > button.icon-button > span {
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+}
+.calendar-sidebar > .calendar-year > p {
+    font-size: 18px;
+    margin: 0 10px;
+}
+.calendar-sidebar > .month-list {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 43px);
+    overflow-y: auto;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    z-index: -1;
+}
+.calendar-sidebar > .month-list > .calendar-months {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+}
+.calendar-sidebar > .month-list > .calendar-months::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.calendar-sidebar > .month-list > .calendar-months > li {
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.calendar-events > .event-header > p {
+    margin: 0;
+    font-size: 20px;
+}
+.sidebar-hide .calendar-sidebar > .month-list {
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+}
+.event-container > .event-info > p.event-title {
+    font-size: 18px;
+}
+.event-container > .event-info > p.event-desc {
+    font-size: 12px;
+}
+button.icon-button > span.bars,
+button.icon-button > span.bars::before,
+button.icon-button > span.bars::after {
+    height: 4px;
+}
+button.icon-button > span.bars::before {
+    top: -8px;
+}
+button.icon-button > span.bars::after {
+    bottom: -8px;
+}
+button.icon-button > span.chevron-arrow-right {
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    width: 18px;
+    height: 18px;
+    -webkit-transform: translateX(-3px) rotate(-45deg);
+        -ms-transform: translateX(-3px) rotate(-45deg);
+            transform: translateX(-3px) rotate(-45deg);
+}
+.event-container::before {
+    transform: translate(21.5px, 25px);
+}
+.event-container:last-child.event-container::before {
+    height: 22.5px;
+    transform: translate(21.5px, 0);
+}
+.event-container > .event-icon {
+    padding: 15px;
+    width: 45px;
+    height: 45px;
+}
+.event-container > .event-icon::before {
+    left: 21px;
+}
+.event-container:last-child > .event-icon::before {
+    height: 50%;
+}
+.event-container > .event-info {
+    width: calc(100% - 45px);
+}
+.event-container > .event-info > p {
+    font-size: 18px;
+}
+
+/*▒▒▒▒▒▒▒▒▒   COLORS   ▒▒▒▒▒▒▒▒▒▒▒*/
+.evo-calendar {
+    background-color: #fbfbfb;
+    color: #5a5a5a;
+    -webkit-box-shadow: 0 10px 50px -20px var(--sp-calendar-base);
+            box-shadow: 0 10px 50px -20px var(--sp-calendar-base);
+}
+.calendar-sidebar {
+    background-color: var(--sp-calendar-base);
+    color: #fff;
+    -webkit-box-shadow: 5px 0 18px -3px var(--sp-calendar-base);
+            box-shadow: 5px 0 18px -3px var(--sp-calendar-base);
+}
+.calendar-sidebar > .calendar-year {
+    background-color: var(--sp-calendar-base);
+    -webkit-box-shadow: 0 3px 8px -3px var(--sp-calendar-dark_shadow);
+            box-shadow: 0 3px 8px -3px var(--sp-calendar-dark_shadow);
+}
+.calendar-sidebar > span#sidebarToggler {
+    background-color: var(--sp-calendar-base);
+    -webkit-box-shadow: 5px 0 18px -3px var(--sp-calendar-base);
+            box-shadow: 5px 0 18px -3px var(--sp-calendar-base);
+}
+.calendar-sidebar > .month-list {
+    background-color: var(--sp-calendar-base);
+}
+.calendar-sidebar > .month-list > .calendar-months > li:hover {
+    background-color: var(--sp-calendar-hovercolor);
+}
+.calendar-sidebar > .month-list > .calendar-months > li.active-month {
+    background-color: var(--sp-calendar-activecolor);
+}
+.calendar-inner {
+    background-color: #fff;
+    -webkit-box-shadow: 5px 0 18px -3px rgba(0, 0, 0, 0.15);
+            box-shadow: 5px 0 18px -3px rgba(0, 0, 0, 0.15);
+}
+.calendar-inner::after {
+    background-color: var(--sp-calendar-dark_shadow);
+}
+th[colspan="7"] {
+    color: var(--sp-calendar-base);
+}
+th[colspan="7"]::after {
+    background-color: var(--sp-calendar-light_shadow);
+}
+tr.calendar-header .calendar-header-day {
+    color: #5a5a5a;
+}
+tr.calendar-body .calendar-day .day {
+    color: #5a5a5a;
+}
+tr.calendar-body .calendar-day .day:hover {
+    background-color: #dadada;
+}
+tr.calendar-body .calendar-day .day.calendar-active,
+tr.calendar-body .calendar-day .day.calendar-active:hover {
+    color: #5a5a5a;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+tr.calendar-body .calendar-day .day.calendar-today {
+    color: #fff;
+    background-color: var(--sp-calendar-base);
+}
+tr.calendar-body .calendar-day .day.calendar-today:hover {
+    color: #fff;
+    background-color: var(--sp-calendar-activecolor);
+}
+tr.calendar-body .calendar-day .day[disabled] {
+    background-color: transparent;
+    color: #b9b9b9;
+}
+.calendar-events {
+    background-color: #fbfbfb;
+    -webkit-box-shadow: 0 5px 18px -3px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 18px -3px rgba(0, 0, 0, 0.15);
+}
+.calendar-events > .event-header > p {
+    color: #5a5a5a;
+}
+#eventListToggler {
+    background-color: var(--sp-calendar-base);
+    -webkit-box-shadow: 5px 0 18px -3px var(--sp-calendar-base);
+            box-shadow: 5px 0 18px -3px var(--sp-calendar-base);
+}
+.event-list > .event-empty {
+    background-color: var(--sp-calendar-light_shadow);
+}
+.event-list > .event-empty > p {
+    color: var(--sp-calendar-activecolor);
+}
+.event-container::before {
+    background-color: #eaeaea;
+}
+.event-container:hover {
+    background-color: #fff;
+    -webkit-box-shadow: 0 3px 12px -4px rgba(0, 0, 0, 0.65);
+            box-shadow: 0 3px 12px -4px rgba(0, 0, 0, 0.65);
+}
+.event-container > .event-info > p {
+    color: #5a5a5a;
+}
+.event-container > .event-info > p.event-title > span {
+    color: var(--sp-calendar-activecolor);
+    background-color: rgb(237, 234, 246);
+}
+.event-container > .event-icon > div[class^="event-bullet-"],
+.event-indicator > .type-bullet > div[class^="type-"] {
+    background-color: var(--sp-calendar-base);
+}
+.event-container > .event-icon > div.event-bullet-event,
+.event-indicator > .type-bullet > div.type-event {
+    background-color: #ff7575;
+}
+.event-container > .event-icon > div.event-bullet-holiday,
+.event-indicator > .type-bullet > div.type-holiday {
+    background-color: #ffc107;
+}
+.event-container > .event-icon > div.event-bullet-birthday,
+.event-indicator > .type-bullet > div.type-birthday {
+    background-color: #3ca8ff;
+}
+button.icon-button {
+    background-color: transparent;
+}
+button.icon-button > span.bars {
+    background-color: #fff;
+}
+button.icon-button > span.bars::before,
+button.icon-button > span.bars::after {
+    background-color: #fff;
+}
+.event-hide .calendar-events {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.sidebar-hide .calendar-sidebar {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.calendar-sidebar > span#sidebarToggler {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}

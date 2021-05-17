@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/evo-calendar.css">
-    <link rel="stylesheet" href="./css/evo-calendar_custom.min.css">
+    <link rel="stylesheet" href="./css/evo-calendar.mini.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/evo-calendar.js"></script>
     <script>
@@ -16,7 +16,7 @@
                 language: 'en',
                 todayHighlight: true,
                 sidebarToggler: true,
-                sidebarDisplayDefault: true,
+                sidebarDisplayDefault: false,
                 eventListToggler: true,
                 eventDisplayDefault: true,
                 format: 'mm/dd/yyyy',
@@ -57,16 +57,31 @@
             $("#evoCalendar").evoCalendar('addCalendarEvent', [{
                     id: "required-id-5",
                     name: "NEW EVENT",
-                    date: "2021-04-13T11:00:00",
+                    date: "2021-05-03T11:00:00",
                     type: "birthday",
                     everyYear: true
                 },
                 {
                     id: "required-id-6",
                     name: "Holiday",
-                    date: "2021-04-17T11:00:00",
+                    date: "2021-05-05T11:00:00",
                     type: "holiday",
-                    everyYear: false // default
+                    everyMonth: true
+                },
+                {
+                    name: "Vacation Leave",
+                    badge: "05/13 - 05/15", // Event badge (optional)
+                    date: ["2021-05-10T11:00:00", "2021-05-12T18:00:00"], // Date range
+                    description: "Vacation leave for 3 days.", // Event description (optional)
+                    type: "event",
+                    color: "#63d867" // Event custom color (optional)
+                },
+                {
+                    id: "required-id-7",
+                    name: "Holiday",
+                    date: "All/08/2021",
+                    type: "holiday",
+                    everyMonth: true
                 },
             ]);
 
@@ -121,7 +136,9 @@
 </head>
 
 <body>
-    <div id="evoCalendar"></div>
+    <div style="width: 50%;">
+        <div id="evoCalendar"></div>
+    </div>
 </body>
 
 </html>
